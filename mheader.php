@@ -72,7 +72,7 @@ if (!isset($_SESSION['email'])) {
                             </div>
                             <div class="col-3 user-info">
                                 <span class="user-name text-dark"> <b> <?php echo $_SESSION['name'] ?> </b></span>
-                                <span class="user-role">student</span>
+                                <span class="user-role">Moderator</span>
                                 <span class="user-status">
                                     <i class="fa fa-circle"></i>
                                     <span>Online</span>
@@ -209,42 +209,14 @@ if (!isset($_SESSION['email'])) {
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="header-menu">
-                                    <span>Extra</span>
-                                </li>
-
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-book"></i>
-                                        <span>Documentation</span>
-
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../Sections/eventscalendar.php">
-                                        <i class="fa fa-calendar"></i>
-                                        <span>Calendar</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-bookmark"></i>
-                                        <span>Badges</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-th"></i>
-                                        <span>Attendance</span>
-                                    </a>
-                                </li>
-                            </ul>
+                                
                         </div>
                         <!-- sidebar-menu  -->
                     </div>
                     <!-- sidebar-content  -->
                     <div class="sidebar-footer">
-                        <a href="#">
+                       <!-- 
+                            <a href="#">
                             <i class="fa fa-bell"></i>
                             <span class="badge badge-pill badge-warning notification">3</span>
                         </a>
@@ -252,6 +224,7 @@ if (!isset($_SESSION['email'])) {
                             <i class="fa fa-envelope"></i>
                             <span class="badge badge-pill badge-success notification">7</span>
                         </a>
+                        -->
                         <a href="#">
                             <i class="fa fa-cog"></i>
 

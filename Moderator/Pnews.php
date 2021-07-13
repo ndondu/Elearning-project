@@ -5,7 +5,8 @@ include_once("../mheader.php");
 ?>
 <div class=" moon-logo container  ">
 
-    <div class="row">
+    <!-- 
+        <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-12">
             <img src="../images/university-avatar-education-icon-vector-1979314(1).jpg" alt="">
 
@@ -14,6 +15,7 @@ include_once("../mheader.php");
             <p class=" logo-text text-uppercase text-primary ">Moon Academy</p>
         </div>
     </div>
+   -->
 
 </div>
 

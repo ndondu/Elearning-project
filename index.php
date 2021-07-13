@@ -28,27 +28,25 @@
   <nav class="navbar navbar-expand-lg bg-white static-top">
     <div class="container ">
       <a class="navbar-brand text-primary" href="#">
-        <img src="images\university-avatar-education-icon-vector-1979314(1).jpg" alt="" height="50" width="50">
-        Moon e-learning
+        <img src="images\logo.png" alt="" height="70" width="90">
+
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon text-primary"></span>
       </button>
       <div class="collapse navbar-collapse text-dark" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link text-dark" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
+          <a class="btn btn-primary btn-lg text-white" href="#">Home
+            <span class="sr-only">(current)</span>
+          </a>
           <li class="nav-item">
             <a class="nav-link text-dark" href="#">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Services</a>
+            <a class="nav-link text-dark" href="#">courses</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Contact</a>
+            <a class="nav-link text-dark" href="#">FAQs</a>
           </li>
 
           <li class=" login">
@@ -61,323 +59,141 @@
   </nav>
 
   <!-- page content -->
-  <div class=" fluid-container page-container">
-    <center>
-      <div class="page-content">
-        <div class="inner-page">
-          <p class="para1 bg-primary">Invent Your Future With The Best.</p>
-        </div>
-        <div class="inner-page page-buttons">
-          <button class="btn btn-light">Get started</button>
-          <button class="btn btn-dark">View courses</button>
+  <div class="container-fluid mt-2">
+
+    <div class="row">
+
+      <div class="col-lg-6">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="card-img-top" src="images\college-student-renting (1).jpeg" alt="Los Angeles" width="100%" height="500">
+              <div class="carousel-caption">
+                <h3></h3>
+                <p></p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="card-img-top" src="images\index1.jpg" alt="Chicago" width="100%" height="500">
+              <div class="carousel-caption">
+                <h3></h3>
+                <p></p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="card-img-top" src="http://atlantablackstar.com/wp-content/uploads/2015/07/college-students-studying2_0.jpg" alt="New York" width="100%" height="500">
+              <div class="carousel-caption">
+                <h3></h3>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </center>
+      <div class="col-lg-6">
+        <div class="jumbotron bg-white">
+          <div id="demo" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <h2>Welcome to Moon Learning</h2>
+                <p class="text-dark">
+                  Online courses provide a different way to study and place different
+                  skills from students. You will find that, as an online learner, selfmotivation and discipline are paramount. This means that you are
+                  completely responsible for establishing and maintaining a regular study
+                  system
+                </p>
+                <a href="sections/register.php" class="btn btn-outline-primary">GET STARTED</a>
+                <div class="carousel-caption">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <h2>Courses</h2>
+              </div>
+              <div class="carousel-item">
+                <h2>FAQs</h2>
+                <p class="text-dark">Get to know more about eLearning at Moon E-learning School</p>
+                <a class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">READ MORE</a>
+                <div class="carousel-caption">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
 
   </div>
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Moon e-learning FAQs</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul class="text-dark">
+            <li>
+              Moon e-learning is an online system that allows students to attend classes online and can also access all the learning materials provided by the Lecturers
+            </li>
+          </ul>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  </div>
+
+  </div>
+
+
 
   <!-- about us page -->
 
-  <div class="about-area p-5">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-lg-6 col-md-12 about-title">
-          <h4 class="text-uppercase pt-4 w-75">
-            <span>About us</span>
-
-          </h4>
-          <p class="para text-dark">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          </p>
-          <p class="para text-dark">
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English
-          </p>
-          <button type="button" class="btn btn-warning text-uppercase">read more</button>
-        </div>
-
-        <div class="col-lg-6 col-md-12 images p-3 ">
-          <div class="row">
-
-            <div class="col-lg-5 about-image" style="height:150px">
-              <figure class="snip0019">
-                <img src="./images/Blog-Choosing-a-LMS-720x300-1.png" alt="image" height="140" width="280">
-                <figcaption>
-                  <p>wassup</p>
-                </figcaption>
-              </figure>
-            </div>
-
-
-            <div class="col-lg-5 about-image">
-              <figure class="snip0019">
-                <img src="./images/classroom.jpg" alt="image" class="img-fluid" width="280">
-                <figcaption>
-                  <p>wassup</p>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-5 about-image">
-              <figure class="snip0019">
-                <img src="./images/images.jpg" alt="image" class="img-fluid" width="280">
-                <figcaption>
-                  <p>wassup</p>
-                </figcaption>
-              </figure>
-            </div>
-
-            <div class="col-lg-5 about-image" style="height: 200px;">
-              <figure class="snip0019">
-                <img src="./images/books.jpg" alt="image" height="140" width="280">
-                <figcaption>
-                  <p>wassup</p>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-
-
-
-
-        </div>
-
-
-      </div>
-    </div>
-  </div>
 
   <!-- services page -->
-  <div class="courses-page ">
-    <div class="fluid-container pt-2">
-
-      <div class="header">
-        <h3 class="text-center"> Services We Provide</h3>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-12 padd">
-          <div class="services">
-            <div class="course-img text-center py-4">
-              <img src="./images/Artificial-Intelligence-5.webp" alt="img" class="img-fluid mr-4">
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title text-uppercase font-roboto">Web development</h5>
-              <p class="card-text text-secondary">
-                Some quick example text to build on the card
-                title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-lg-3 col-md-6 col-sm-12 padd">
-          <div class="services">
-            <div class="course-img text-center py-4">
-              <img src="./images/Artificial-Intelligence-5.webp" alt="img" class="img-fluid mr-4">
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title text-uppercase font-roboto">Web development</h5>
-              <p class="card-text text-secondary">
-                Some quick example text to build on the card
-                title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 padd">
-          <div class="services">
-            <div class="course-img text-center py-4">
-              <img src="./images/Artificial-Intelligence-5.webp" alt="img" class="img-fluid mr-4">
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title text-uppercase font-roboto">Web development</h5>
-              <p class="card-text text-secondary">
-                Some quick example text to build on the card
-                title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 padd">
-          <div class="services">
-            <div class="course-img text-center py-4">
-              <img src="./images/Artificial-Intelligence-5.webp" alt="img" class="img-fluid mr-4">
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title text-uppercase font-roboto">Web development</h5>
-              <p class="card-text text-secondary">
-                Some quick example text to build on the card
-                title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
 
   <!-- footer -->
 
-  <footer class="footer-area footer--white pt-5 ">
-    <figure class="snip0019">
-      <img src="https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2020/07/shutterstock_582803470.jpg?w=750" alt="image" class="img-fluid" style="width: 100%;">
-      <div class="footer-big">
-        <!-- start .container -->
-        <div class="container">
-          <figcaption>
-            <div class="row">
-              <div class="col-md-3 col-sm-12">
-                <div class="footer-widget">
-                  <div class="widget-about">
 
-                    <ul class="contact-details">
-                      <li>
-                        <span class="icon-earphones"></span> Call Us:
-                        <a href="tel:344-755-111">344-755-111</a>
-                      </li>
-                      <li>
-                        <span class="icon-envelope-open"></span>
-                        <a href="mailto:support@aazztech.com">support@moon.ac.ke</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- Ends: .footer-widget -->
-              </div>
-              <!-- end /.col-md-4 -->
-              <div class="col-md-3 col-sm-4">
-                <div class="footer-widget">
-                  <div class="footer-menu footer-menu--1">
-                    <h4 class="footer-widget-title">Popular Category</h4>
-                    <ul>
-                      <li>
-                        <a href="#">Wordpress</a>
-                      </li>
-                      <li>
-                        <a href="#">Plugins</a>
-                      </li>
-                      <li>
-                        <a href="#">Joomla Template</a>
-                      </li>
-                      <li>
-                        <a href="#">Admin Template</a>
-                      </li>
-                      <li>
-                        <a href="#">HTML Template</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <!-- end /.footer-menu -->
-                </div>
-                <!-- Ends: .footer-widget -->
-              </div>
-              <!-- end /.col-md-3 -->
+  <div class="mini-footer pt-5 fixed-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright-text">
+            <p>© 2021
+              <a href="#">moonacademy</a>. All rights reserved. Created by
+              <a href="#"></a>
+            </p>
+          </div>
 
-              <div class="col-md-3 col-sm-4">
-                <div class="footer-widget">
-                  <div class="footer-menu">
-                    <h4 class="footer-widget-title">Our Institution
-                    </h4>
-                    <ul>
-                      <li>
-                        <a href="#">About Us</a>
-                      </li>
-                      <li>
-                        <a href="#">How It Works</a>
-                      </li>
-                      <li>
-                        <a href="#">members</a>
-                      </li>
-                      <li>
-                        <a href="#">Testimonials</a>
-                      </li>
-                      <li>
-                        <a href="#">Contact Us</a>
-                      </li>
-                      <li>
-                        <a href="#">Plan &amp; Pricing</a>
-                      </li>
-                      <li>
-                        <a href="#">Blog</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <!-- end /.footer-menu -->
-                </div>
-                <!-- Ends: .footer-widget -->
-              </div>
-              <!-- end /.col-lg-3 -->
-
-              <div class="col-md-3 col-sm-4">
-                <div class="footer-widget">
-                  <div class="footer-menu no-padding">
-                    <h4 class="footer-widget-title">Help Support</h4>
-                    <ul>
-                      <li>
-                        <a href="#">Support Forum</a>
-                      </li>
-                      <li>
-                        <a href="#">Terms &amp; Conditions</a>
-                      </li>
-                      <li>
-                        <a href="#">Support Policy</a>
-                      </li>
-                      <li>
-                        <a href="#">Refund Policy</a>
-                      </li>
-                      <li>
-                        <a href="#">FAQs</a>
-                      </li>
-                      <li>
-                        <a href="#">Buyers Faq</a>
-                      </li>
-                      <li>
-                        <a href="#">Sellers Faq</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <!-- end /.footer-menu -->
-                </div>
-                <!-- Ends: .footer-widget -->
-              </div>
-              <!-- Ends: .col-lg-3 -->
-
-            </div>
-          </figcaption>
-
-        </div>
-        <!-- end /.container -->
-      </div>
-    </figure>
-    <!-- end /.footer-big -->
-
-    <div class="mini-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="copyright-text">
-              <p>© 2021
-                <a href="#">moonacademy</a>. All rights reserved. Created by
-                <a href="#"></a>
-              </p>
-            </div>
-
-            <div class="go_top">
-              <span class="icon-arrow-up"></span>
-            </div>
+          <div class="go_top">
+            <span class="icon-arrow-up"></span>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </footer>
 
 
