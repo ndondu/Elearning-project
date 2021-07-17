@@ -5,28 +5,19 @@ include_once("../header.php");
 ?>
 
 
-<div class=" moon-logo container  ">
 
-    <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <img src="../images/university-avatar-education-icon-vector-1979314(1).jpg" alt="">
 
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 pt-5" style="margin-left: -5rem;">
-            <p class=" logo-text text-uppercase text-primary ">moon elearning school</p>
-        </div>
-    </div>
+<div class="row ">
 
-</div>
-</div>
-
-<div class="row pt-5">
+    <h2>
+        News and Announcements
+    </h2><br><br>
     <?php
     include "../Includes/connect.php";
     $query = mysqli_query($conn, "SELECT news.id, news.title, news.message, news.posted, news.user_id,
                              users_table.id as nid, users_table.name
                               from users_table
-                              inner join news on  news.user_id = users_table.id
+                              inner join news on  news.user_id = users_table.id order by news.id desc
                               ");
 
     while ($row = mysqli_fetch_array($query)) {
@@ -42,7 +33,8 @@ include_once("../header.php");
             <p>
                 <?php echo $row['message']; ?>
             </p>
-            <div class="news-btn">
+            <!-- 
+                <div class="news-btn">
                 <div class="like-btn">
                     <i></i>
                     <a href="#">
@@ -58,6 +50,7 @@ include_once("../header.php");
 
                 </div>
             </div>
+            -->
         </div>
     <?php } ?>
 

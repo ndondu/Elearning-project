@@ -21,7 +21,6 @@ include_once("../header.php");
     </div>
 
 </div>
--->
 
 <div class="row">
     <div class="col-lg-3 col-md-6 col-lg-12">
@@ -123,11 +122,9 @@ include_once("../header.php");
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
                         <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-th"></i> </a>Attendance </label><br>
-                        <input type="radio" name="" id="" value="">&nbsp;<label for=""><a href=""><img src="https://canvas.rutgers.edu/wp-content/uploads/2019/01/BigBlueButton.png" alt="image" height="30" width="30"></a>BigBlueButton</label><br>
-                        <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""> <i class="fa fa-file"></i></a> Assignment</label><br>
-                        <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-comment"></i> </a>Forum</label><br>
-                        <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-book"></i></a> Quizzes</label><br>
-                        <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-comment"> </i> </a>Chats</label><br>
+                        <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""> <i class="fa fa-file"></i></a> Assignments</label><br>
+                        <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-comment"></i> </a>News and Announcements</label><br>
+                        
                     </div>
 
                     <div class="modal-footer">

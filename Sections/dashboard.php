@@ -36,8 +36,12 @@ include_once("../header.php");
 
 
 <!-- my courses page1 -->
-<div class="all-courses pt-5">
-    <h5> <i class="fa fa-book " style="font-size: 1.3rem; "></i> &nbsp; My courses</h5>
+<div class="all-courses ">
+
+<img src="../images/logo.png" alt="" height="70" width="100">
+
+
+    <h5 class="pt-5"> <i class="fa fa-book " style="font-size: 1.3rem; "></i> &nbsp; My courses</h5>
     <div class="title-course">
 
         <font class="text-success" align="center"><?php echo htmlentities($_SESSION['msg']); ?><?php echo htmlentities($_SESSION['msg'] = ""); ?></font>

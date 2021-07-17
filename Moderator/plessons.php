@@ -1,5 +1,4 @@
 <?php
-
 include_once("../mheader.php");
 
 ?>
@@ -35,12 +34,14 @@ include_once("../mheader.php");
     $result = mysqli_query($conn, "SELECT lesson.id, lesson.course_id,lesson.topic, lesson.title, lesson.description, lesson.notes, lesson.classroom, lesson.url, 
                              courses.id as cid , courses.course_name 
                              from courses 
-                             inner join lesson on lesson.course_id = courses.id where  lesson.course_id =  $cid  ");
+                             inner join lesson on lesson.course_id = courses.id where courses.id =  $cid  ");
     while ($row =  mysqli_fetch_array($result)) {
     ?>
 
         <div class="course_name bg-light pt-5" style="width:100%; border-left:2px solid #4f7bda; border-bottom:4px solid #4f7bda; padding:1rem; ">
             <h4><?php echo $row['course_name']; ?> </h4>
+
+
         </div>
 
         <div class="col-lg-3 col-md-6 col-lg-12 pt-5 bg-light" style="margin-top:2rem; " id="<?php echo $row['id']; ?>">
@@ -57,8 +58,8 @@ include_once("../mheader.php");
 
                         <li>
                             <i class="fa fa-book"></i> &nbsp; Notes <br>
-                            <span class="pt-3"> <a href="../Includes/download.php?file=<?php echo $row['notes']; ?>"> <i class="fa fa-download text-primary">&nbsp; download</i> </a></span>
-                        </li>
+                            <span class="pt-3"> <a href="../Includes/download.php?file=<?php echo $row['notes'];  ?>"> <i class="fa fa-download text-primary">&nbsp; download</i> </a></span>
+
 
                         <li class="pt-3"><i class="fa fa-file"></i> &nbsp; assignment</li>
                         <li class="pt-3">
@@ -75,83 +76,93 @@ include_once("../mheader.php");
             </div>
 
         </div>
-    <?php } ?>
+
+        
+        <?php } ?>
 
 
-    <!-- Modal -->
 
-    <div class="pop-conainer">
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Add Lesson</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+        <!-- Modal -->
+
+        <div class="pop-conainer">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add Lesson</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+
+
+                        <form action="../Includes/lesson.php" method="post" enctype="multipart/form-data">
+                            <div class="modal-body">
+                               <div class="col-lg-12">
+                                    <input type="text" name="id" class="form-control" value="<?php echo $cid;?>">
+                                </div><br>
+                                <div class="col-lg-12">
+                                    <input type="text" name="topic" class="form-control" placeholder="topic" >
+                                </div><br>
+                                <div class="col-lg-12">
+                                    <input type="text" name="title" class="form-control" placeholder="title">
+                                </div><br>
+                                <div class="col-lg-12">
+                                    <textarea name="description" cols="20" rows="5" type="text" class="form-control" placeholder="description"></textarea>
+                                </div><br>
+
+                                <div class="col-lg-12">
+                                    <input type="file" name="notes" class="form-control" placeholder="">
+                                </div><br>
+                                <div class="col-lg-12">
+                                    <input type="text" name="classroom" class="form-control" placeholder="meeting pass">
+                                </div><br>
+                                <div class="col-lg-12">
+                                    <input type="url" name="url" class="form-control" placeholder="meeting link">
+                                </div><br>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="submit" name="submit" class="btn btn-primary">Post</button>
+                            </div>
+                        </form>
+
+
                     </div>
-                    <form action="../Includes/lesson.php" method="post" enctype="multipart/form-data">
-                        <div class="modal-body">
-                            <div class="col-lg-12">
-                                <input type="text" name="id" class="form-control" value="<?php echo $cid; ?>">
-                                <input type="text" name="topic" class="form-control" placeholder="topic">
-                            </div><br>
-                            <div class="col-lg-12">
-                                <input type="text" name="title" class="form-control" placeholder="title">
-                            </div><br>
-                            <div class="col-lg-12">
-                                <textarea name="description" cols="20" rows="5" type="text" class="form-control" placeholder="description"></textarea>
-                            </div><br>
-
-                            <div class="col-lg-12">
-                                <input type="file" name="notes" class="form-control" placeholder="">
-                            </div><br>
-                            <div class="col-lg-12">
-                                <input type="text" name="classroom" class="form-control" placeholder="">
-                            </div><br>
-                            <div class="col-lg-12">
-                                <input type="url" name="url" class="form-control" placeholder="">
-                            </div><br>
-
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                             <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-bars" style="font-size: 1.2rem;"></i> &nbsp; Activities</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="submit" name="submit" class="btn btn-primary">Post</button>
-                        </div>
-                    </form>
+
+                        <form action="" method="post" enctype="multipart/form-data">
+                            <div class="modal-body">
+                                <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-th"></i> </a>Attendance </label><br>
+                                <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-globe"></i></a>Announcements</label><br>
+                                <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""> <i class="fa fa-file"></i></a> Assignment</label><br>
+                         
+                            </div>
+
+                            <div class="modal-footer">
+                                <!--  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->
+                                <button type="submit" name="submit" class="btn btn-primary">Add</button>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-bars" style="font-size: 1.2rem;"></i> &nbsp; Activities</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
 
-                    <form action="" method="post" enctype="multipart/form-data">
-                        <div class="modal-body">
-                            <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-th"></i> </a>Attendance </label><br>
-                            <input type="radio" name="" id="" value="">&nbsp;<label for=""><a href=""><img src="https://canvas.rutgers.edu/wp-content/uploads/2019/01/BigBlueButton.png" alt="image" height="30" width="30"></a>BigBlueButton</label><br>
-                            <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""> <i class="fa fa-file"></i></a> Assignment</label><br>
-                            <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-comment"></i> </a>Forum</label><br>
-                            <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-book"></i></a> Quizzes</label><br>
-                            <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-comment"> </i> </a>Chats</label><br>
-                        </div>
-
-                        <div class="modal-footer">
-                            <!--  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->
-                            <button type="submit" name="submit" class="btn btn-primary">Add</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
+     
 
 </div>
 

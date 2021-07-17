@@ -209,13 +209,13 @@ if (!isset($_SESSION['email'])) {
                                         </ul>
                                     </div>
                                 </li>
-                                
+
                         </div>
                         <!-- sidebar-menu  -->
                     </div>
                     <!-- sidebar-content  -->
                     <div class="sidebar-footer">
-                       <!-- 
+                        <!-- 
                             <a href="#">
                             <i class="fa fa-bell"></i>
                             <span class="badge badge-pill badge-warning notification">3</span>

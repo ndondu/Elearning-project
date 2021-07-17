@@ -46,6 +46,7 @@ session_start();
                 <nav id="sidebar" class="sidebar-wrapper pt-2">
                     <div class="sidebar-content">
                         <div class="sidebar-brand">
+
                             <a href="#">Moon Academy</a>
                             <div id="close-sidebar">
                                 <i class="fas fa-times"></i>
@@ -168,7 +169,7 @@ session_start();
                                                 <a href="#">Chess club</a>
                                             </li>
                                             <li>
-                                                <a href="#">code challenge</a>
+                                                <a href="./code.php">code challenge</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -233,19 +234,19 @@ session_start();
                 <!-- sidebar-wrapper  -->
 
                 <!-- PAGE CONTENT DASHBOARD -->
-<style>
-  .body{ 
-    margin-left: 2rem; 
-    padding-left: 7rem;
-    }
-    @media only screen and (max-width: 600px) {
-        .body{ 
-            margin-left: 0rem; 
-            padding-left: 0rem;
-        }
-   }
-</style>
+                <style>
+                    .body {
+                        margin-left: 2rem;
+                        padding-left: 7rem;
+                    }
+
+                    @media only screen and (max-width: 600px) {
+                        .body {
+                            margin-left: 0rem;
+                            padding-left: 0rem;
+                        }
+                    }
+                </style>
 
                 <div class="container body">
                     <div class="container-fluid">
-                        <!-- 

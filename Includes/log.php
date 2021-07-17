@@ -22,14 +22,13 @@ if (count($_POST) > 0) {
 
 
 
-    
 
-        $row["is_staff"] == 1 ?
 
-          header('location:../moderator/mdashboard.php') : header('location:../sections/dashboard.php');
-        $_SESSION['message'] = "Login successfull";
-      }
-    
+      $row["is_staff"] == 1 ?
+
+        header('location:../moderator/mdashboard.php') : header('location:../sections/dashboard.php');
+      $_SESSION['message'] = "Login successfull";
+    }
   } else {
 
 
@@ -46,27 +45,3 @@ if (count($_POST) > 0) {
 
 
 
-// if (isset($_POST['submit'])) {
-// $email = $_POST['email'];
-// $pass = $_POST['password'];
-
-// $con = mysqli_connect('localhost', 'root', '', 'moon_db');
-// $query = "SELECT * FROM users_table WHERE email ='$email' && password = '$pass'";
-// $results = mysqli_query($con, $query);
-
-// if (mysqli_num_rows($results) > 0) {
-// $_SESSION['email'] = $email;
-// $_SESSION['password'] = $pass;
-// header('location:../sections/dashboard.php');
-// $message = "<script>
-  // alert('Welcome!')
-  // 
-</script>";
-// // } else {
-// // $message = "<script>
-  //   alert('Invalid Credetails!')
-  // 
-</script>";
-// header('location:../sections/login.php');
-// }
-// }
