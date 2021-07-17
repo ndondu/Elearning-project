@@ -15,7 +15,8 @@ if (count($_POST) > 0) {
 
 
       $_SESSION["email"] = $row["email"];
-      $_SESSION["name"] = $row["name"];
+      $_SESSION["fname"] = $row["fname"];
+      $_SESSION["lname"] = $row["lname"];
       $_SESSION["user_id"] = $row["id"];
       $_SESSION["password"] = $row["password"];
       $_SESSION["is_staff"] = $row["is_staff"];

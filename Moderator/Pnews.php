@@ -23,7 +23,7 @@ include_once("../mheader.php");
     <?php
     include "../Includes/connect.php";
     $query = mysqli_query($conn, "SELECT news.id, news.title, news.message, news.posted, news.user_id,
-                                    users_table.id as nid, users_table.name
+                                    users_table.id as nid, users_table.fname, users_table.lname
                                      from users_table
                                      inner join news on  news.user_id = users_table.id
                                      ");
@@ -31,24 +31,26 @@ include_once("../mheader.php");
     while ($row = mysqli_fetch_array($query)) {
     ?>
 
-        <div class="col-md-12 col-lg-12 bg-white ">
-            <div>
+        <div class=" col-lg-12 bg-white pt-3 ">
+        <form action="../Includes/editnews.php" method="post">
 
-                <p class="posted-by">
-                    <span class="topic"><?php echo $row['title']; ?></span><br>
-                    Posted By: <span><?php echo $row['name'] ?></span> on <span><?php echo $row['posted'] ?></span>
-                </p>
+        
+            <div>
+            <font class="text-danger" align="center"><?php echo htmlentities($_SESSION['!update']); ?><?php echo htmlentities($_SESSION['!update'] = ""); ?></font>
+               
+
+                    <p class="posted-by">
+                        <input type="text" name="title" value="<?php echo $row['title']; ?>" style="width:500px;"><br>
+
+                        Posted By: <span><?php echo $row['fname'] . " " . $row['lname']  ?></span> on <span><?php echo $row['posted'] ?></span>
+                    </p>
             </div>
-            <p>
-                <?php echo $row['message'] ?>
-            </p>
-            <div class="news-btn">
-                <div class="like-btn">
-                    <i></i>
-                    <a href="#">
-                        <button class="btn btn-primary">like</button>
-                    </a>
-                </div>
+
+            <p><textarea type="text" name="message" cols="100" rows="5"><?php echo $row['message'] ?></textarea></p>
+
+            <button class="btn btn-primary" type="submit" name="edit" >Edit</button>
+                </form>
+                <!-- 
                 <div class="comment-btn">
 
                     <i></i>
@@ -58,14 +60,15 @@ include_once("../mheader.php");
 
                 </div>
             </div>
+           -->
+            </div>
+
+
+
+
+
+        <?php } ?>
         </div>
-
-
-
-
-
-    <?php } ?>
-</div>
 </div>
 
 

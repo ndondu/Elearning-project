@@ -15,7 +15,7 @@ include_once("../header.php");
     <?php
     include "../Includes/connect.php";
     $query = mysqli_query($conn, "SELECT news.id, news.title, news.message, news.posted, news.user_id,
-                             users_table.id as nid, users_table.name
+                             users_table.id as nid, users_table.fname, users_table.lname
                               from users_table
                               inner join news on  news.user_id = users_table.id order by news.id desc
                               ");
@@ -27,7 +27,7 @@ include_once("../header.php");
 
                 <p class="posted-by">
                     <span class="topic"><?php echo $row['title']; ?></span><br>
-                    Posted By: <span><?php echo $row['name']; ?></span> on <span><?php echo $row['posted']; ?></span>
+                    Posted By: <span><?php echo $row['fname']. " ". $row['lname'] ?> </span> on <span><?php echo $row['posted']; ?></span>
                 </p>
             </div>
             <p>

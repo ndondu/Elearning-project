@@ -23,14 +23,14 @@ session_start();
 
 <body>
     <main>
-        <div class=" main-area container pt-4 bg-light" style="height:250px">
+        <div class=" main-area container bg-light pt-4 " >
 
-            <div class="login-area col-md-6 col-sm-12  container">
+            <div class="login-area  container-fluid" style="height: 230px;">
                 <div class="text-area">
 
-                    <p class="text-white">
-                    <h3 class="text-uppercase">Sign up</h3>
-                    <span class="pt-3">Want to sign up fill out this form.</span><br>
+                    <p class="">
+                    <h3 class="text-uppercase ">Sign up</h3>
+                    <span class="pt-3 ">Want to sign up fill out this form.</span><br>
                     <font class="text-danger" align="center"><?php echo htmlentities($_SESSION['msg']); ?><?php echo htmlentities($_SESSION['msg'] = ""); ?></font>
                     </p>
 
@@ -38,10 +38,10 @@ session_start();
                 <br>
 
                 <div class="input-area container-fluid">
-                    <div class="row row-flex">
+                    <div class="row ">
 
 
-                        <div class="inner-area  col-md-6 col-sm-12">
+                        <div class=" col-lg-4 ">
                             <div class="image">
 
                                 <figure class="snip0019">
@@ -60,28 +60,46 @@ session_start();
                         </div>
                     </div>
 
-                    <div class=" col-md-6 col-ms-12 ">
+                    <div class=" col-lg-8  ">
 
                         <form action="../Includes/reg.php" method="POST">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label for="fname">FName</label>
+                                    <input type="text" class="form-control" name="fname" id="exampleInputName">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="lname">LName</label>
+                                    <input type="text" class="form-control" name="lname" id="exampleInputName">
+                                </div>
+                            </div>
+                            <label for="dob">DoB</label>
+                            <input type="date" class="form-control" name="dob" id="exampleInputName">
 
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" name="name" id="exampleInputName">
-
-                            <label for="email">Email address</label>
-                            <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
 
 
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                            <div class="row">
+                                <div class="col-lg-6">
+
+                                    <label for="email">Email address</label>
+                                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                                </div>
+                            </div>
 
                             <br>
 
 
-                            &nbsp; &nbsp; &nbsp; <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                            <!-- 
+                                &nbsp; &nbsp; &nbsp; <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
                             <label class="form-check-label" for="exampleRadios1">I accept all the terms.</label>
 
 
-                            <button type="submit" class="btn button-primary mt-2" name="submit">Sign up</button>
+                            -->
+                            <button type="submit" class="btn  button-primary  mt-2" name="submit">Sign up</button>
                             <p class="mt-1" style="font-size: 0.8rem;">Already have an account <a href="login.php">login</a></p>
                         </form>
                     </div>

@@ -70,8 +70,8 @@ if (!isset($_SESSION['email'])) {
                             <div class="col-2 user-pic">
                                 <img class="img-responsive img-rounded" src="../images/university-avatar-education-icon-vector-1979314(1).jpg" alt="User picture">
                             </div>
-                            <div class="col-3 user-info">
-                                <span class="user-name text-dark"> <b> <?php echo $_SESSION['name'] ?> </b></span>
+                            <div class="user-info">
+                                <span class="user-name text-dark"> <b> <?php echo $_SESSION['fname'] . " " . $_SESSION['lname'] ?> </b></span>
                                 <span class="user-role">Moderator</span>
                                 <span class="user-status">
                                     <i class="fa fa-circle"></i>
@@ -203,9 +203,7 @@ if (!isset($_SESSION['email'])) {
                                             <li>
                                                 <a href="#" data-toggle="modal" data-target="#exampleModal">Post News</a>
                                             </li>
-                                            <li>
-                                                <a href="#">Edit News </a>
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </li>
