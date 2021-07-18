@@ -57,7 +57,7 @@ session_start();
                                 <img class="img-responsive img-rounded" src="../images/university-avatar-education-icon-vector-1979314(1).jpg" alt="User picture">
                             </div>
                             <div class="user-info">
-                                <span class="user-name text-dark"> <b> <?php echo $_SESSION['fname']. " ". $_SESSION['lname'] ?> </b></span>
+                                <span class="user-name text-dark"> <b> <?php echo $_SESSION['fname'] . " " . $_SESSION['lname'] ?> </b></span>
                                 <span class="user-role">student</span>
                                 <span class="user-status">
                                     <i class="fa fa-circle"></i>
@@ -182,7 +182,8 @@ session_start();
                                 <li class="header-menu">
                                     <span>Extra</span>
                                 </li>
-                                <li>
+                                <!-- 
+                                    <li>
                                     <a href="#">
                                         <i class="fa fa-book"></i>
                                         <span>Documentation</span>
@@ -206,13 +207,15 @@ session_start();
                                         <span>Attendance</span>
                                     </a>
                                 </li>
+                                -->
                             </ul>
                         </div>
                         <!-- sidebar-menu  -->
                     </div>
                     <!-- sidebar-content  -->
                     <div class="sidebar-footer">
-                        <a href="#">
+                        <!-- 
+                            <a href="#">
                             <i class="fa fa-bell"></i>
                             <span class="badge badge-pill badge-warning notification">3</span>
                         </a>
@@ -220,10 +223,12 @@ session_start();
                             <i class="fa fa-envelope"></i>
                             <span class="badge badge-pill badge-success notification">3</span>
                         </a>
-                        <a href="#">
+                        -->
+                        <a href="#" data-toggle="modal" data-target="#editprofile">
                             <i class="fa fa-cog"></i>
 
                         </a>
+
                         <a href="../Includes/logout.php">
                             <i class="fa fa-power-off"></i>
                         </a>
@@ -250,3 +255,6 @@ session_start();
 
                 <div class="container body">
                     <div class="container-fluid">
+
+
+                     

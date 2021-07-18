@@ -18,7 +18,8 @@ include_once("../header.php");
 </div>
 
 
-<div class="row pt-5 ">
+<!-- 
+    <div class="row pt-5 ">
     <div class="col-md-12 col-lg-12 bg-white ">
         <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text
             used in laying out print, graphic or web designs. The passage is attributed
@@ -29,6 +30,7 @@ include_once("../header.php");
 
 
 </div>
+ -->
 </div>
 
 
@@ -38,7 +40,7 @@ include_once("../header.php");
 <!-- my courses page1 -->
 <div class="all-courses ">
 
-<img src="../images/logo.png" alt="" height="70" width="100">
+    <img src="../images/logo.png" alt="" height="70" width="100">
 
 
     <h5 class="pt-5"> <i class="fa fa-book " style="font-size: 1.3rem; "></i> &nbsp; My courses</h5>
@@ -154,6 +156,50 @@ include_once("../header.php");
 
 </div>
 
+
+
+<!-- Modal -->
+<div class="pop-conainer">
+    <div class="modal light bd-example-modal-lg" id="editprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="exampleModalLabel">Edit Profile</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="../Includes/edit.php" method="post">
+                    <div class="modal-body">
+                        <div class="row">
+                        <div class="col-lg-6">
+                        <input type="hidden" name="uid" class="form-control" placeholder="" value="<?php echo $_SESSION['user_id']; ?>">
+                            <input type="text" name="fname" class="form-control" placeholder="" value="<?php echo $_SESSION['fname']; ?>">
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="text" name="lname" class="form-control" placeholder="" value="<?php echo $_SESSION['lname']; ?>">
+                        </div>
+                        </div>
+                        <div class="row pt-3">
+                        <div class="col-lg-6">
+                            <input type="email" name="email" class="form-control" placeholder="" value="<?php echo $_SESSION['email']; ?>">
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="password" name="password" class="form-control" placeholder="" value="<?php echo $_SESSION['password']; ?>">
+                        </div>
+                        </div>
+                      <br>
+                       
+                    </div>
+                    <div class="modal-footer">
+                        
+                        <button type="submit" name="editprofile" class="btn btn-primary">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

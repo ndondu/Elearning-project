@@ -32,25 +32,25 @@ include_once("../mheader.php");
     ?>
 
         <div class=" col-lg-12 bg-white pt-3 ">
-        <form action="../Includes/editnews.php" method="post">
+            <form action="../Includes/edit.php" method="post">
 
-        
-            <div>
-            <font class="text-danger" align="center"><?php echo htmlentities($_SESSION['!update']); ?><?php echo htmlentities($_SESSION['!update'] = ""); ?></font>
-               
+
+                <div>
+                    <font class="text-danger" align="center"><?php echo htmlentities($_SESSION['!updatenews']); ?><?php echo htmlentities($_SESSION['!update'] = ""); ?></font>
+
 
                     <p class="posted-by">
                         <input type="text" name="title" value="<?php echo $row['title']; ?>" style="width:500px;"><br>
 
                         Posted By: <span><?php echo $row['fname'] . " " . $row['lname']  ?></span> on <span><?php echo $row['posted'] ?></span>
                     </p>
-            </div>
+                </div>
 
-            <p><textarea type="text" name="message" cols="100" rows="5"><?php echo $row['message'] ?></textarea></p>
+                <p><textarea type="text" name="message" cols="100" rows="5"><?php echo $row['message'] ?></textarea></p>
 
-            <button class="btn btn-primary" type="submit" name="edit" >Edit</button>
-                </form>
-                <!-- 
+                <button class="btn btn-primary" type="submit" name="edit">Edit</button>
+            </form>
+            <!-- 
                 <div class="comment-btn">
 
                     <i></i>
@@ -61,14 +61,14 @@ include_once("../mheader.php");
                 </div>
             </div>
            -->
-            </div>
-
-
-
-
-
-        <?php } ?>
         </div>
+
+
+
+
+
+    <?php } ?>
+</div>
 </div>
 
 
