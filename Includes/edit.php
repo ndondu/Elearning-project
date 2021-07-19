@@ -10,9 +10,10 @@ if(isset($_POST['edit'])){
 
     $title = $_POST['title'];
     $message = $_POST['message'];
-    $user_id = $_SESSION['user_id'];
+    $news_id = $_POST['eid'];
 
-    mysqli_query($conn, "UPDATE news SET title = '$title', message = '$message' where user_id = '$user_id' ");
+    mysqli_query($conn, "UPDATE news SET title = '$title', message = '$message' where id = ' $news_id' ");
+    header('location:../moderator/Pnews.php');
     $_SESSION['!updatenews'] = "News updated successfully!";
   
 

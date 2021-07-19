@@ -223,7 +223,7 @@ if (!isset($_SESSION['email'])) {
                             <span class="badge badge-pill badge-success notification">7</span>
                         </a>
                         -->
-                        <a href="#">
+                        <a href="#" data-toggle="modal" data-target="#editprofile">
                             <i class="fa fa-cog"></i>
 
                         </a>

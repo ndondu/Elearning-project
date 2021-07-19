@@ -3,7 +3,8 @@
 include_once("../mheader.php");
 
 ?>
-<div class=" moon-logo container  ">
+<div class=" container  ">
+    <font class="text-success"><?php echo htmlentities($_SESSION['!updatenews']); ?><?php echo htmlentities($_SESSION['!updatenews'] = ""); ?></font>
 
     <!-- 
         <div class="row">
@@ -20,12 +21,13 @@ include_once("../mheader.php");
 </div>
 
 <div class=" row pt-5">
+
     <?php
     include "../Includes/connect.php";
-    $query = mysqli_query($conn, "SELECT news.id, news.title, news.message, news.posted, news.user_id,
+    $query = mysqli_query($conn, "SELECT news.id , news.title, news.message, news.posted, news.user_id,
                                     users_table.id as nid, users_table.fname, users_table.lname
                                      from users_table
-                                     inner join news on  news.user_id = users_table.id
+                                     inner join news on  news.user_id = users_table.id order by news.id desc
                                      ");
 
     while ($row = mysqli_fetch_array($query)) {
@@ -36,17 +38,21 @@ include_once("../mheader.php");
 
 
                 <div>
-                    <font class="text-danger" align="center"><?php echo htmlentities($_SESSION['!updatenews']); ?><?php echo htmlentities($_SESSION['!update'] = ""); ?></font>
+
 
 
                     <p class="posted-by">
+                        <input type="hidden" name="eid" value="<?php echo $row['id']; ?>">
                         <input type="text" name="title" value="<?php echo $row['title']; ?>" style="width:500px;"><br>
 
                         Posted By: <span><?php echo $row['fname'] . " " . $row['lname']  ?></span> on <span><?php echo $row['posted'] ?></span>
                     </p>
                 </div>
 
-                <p><textarea type="text" name="message" cols="100" rows="5"><?php echo $row['message'] ?></textarea></p>
+                <p>
+
+                    <textarea type="text" name="message" cols="100" rows="5"><?php echo $row['message'] ?></textarea>
+                </p>
 
                 <button class="btn btn-primary" type="submit" name="edit">Edit</button>
             </form>

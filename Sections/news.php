@@ -27,7 +27,7 @@ include_once("../header.php");
 
                 <p class="posted-by">
                     <span class="topic"><?php echo $row['title']; ?></span><br>
-                    Posted By: <span><?php echo $row['fname']. " ". $row['lname'] ?> </span> on <span><?php echo $row['posted']; ?></span>
+                    Posted By: <span><?php echo $row['fname'] . " " . $row['lname'] ?> </span> on <span><?php echo $row['posted']; ?></span>
                 </p>
             </div>
             <p>

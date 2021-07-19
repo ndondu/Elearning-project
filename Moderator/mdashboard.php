@@ -142,17 +142,57 @@ include_once("../mheader.php");
             } ?>
     </div>
 </div>
-
-
 <!-- ====end all courses page==== -->
 
 </div>
-
+</div>
 </div>
 
+<!-- Modal -->
+<div class="pop-conainer">
+    <div class="modal light bd-example-modal-lg" id="editprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="exampleModalLabel">Edit Profile</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="../Includes/edit.php" method="post">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input type="hidden" name="uid" class="form-control" placeholder="" value="<?php echo $_SESSION['user_id']; ?>">
+                                <label for="fname">First name</label>
+                                <input type="text" name="fname" class="form-control" placeholder="" value="<?php echo $_SESSION['fname']; ?>">
+                            </div>
+                            <div class="col-lg-6">
+                            <label for="lname">Last name</label>
+                                <input type="text" name="lname" class="form-control" placeholder="" value="<?php echo $_SESSION['lname']; ?>">
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col-lg-6">
+                            <label for="Email">Email</label>
+                                <input type="email" name="email" class="form-control" placeholder="" value="<?php echo $_SESSION['email']; ?>">
+                            </div>
+                            <div class="col-lg-6">
+                            <label for="pass">Password</label>
+                                <input type="password" name="password" class="form-control" placeholder="" value="<?php echo $_SESSION['password']; ?>">
+                            </div>
+                        </div>
+                        <br>
 
+                    </div>
+                    <div class="modal-footer">
 
-
+                        <button type="submit" name="editprofile" class="btn btn-primary">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- page-wrapper -->

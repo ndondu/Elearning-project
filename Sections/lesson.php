@@ -8,7 +8,8 @@ include_once("../header.php");
 <!--PAGE CONTENT -->
 
 
-<div class=" moon-logo container  ">
+<!-- 
+    <div class=" moon-logo container  ">
 
     <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-12">
@@ -21,8 +22,9 @@ include_once("../header.php");
     </div>
 
 </div>
+ -->
 
-<div class="row">
+<div class="row pt-5">
     <div class="col-lg-3 col-md-6 col-lg-12">
 
         <button class="course-dash btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="border: none; float:right;"> <i class="fa fa-bookmark"></i> &nbsp; Course dashboard</button>
@@ -124,7 +126,7 @@ include_once("../header.php");
                         <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-th"></i> </a>Attendance </label><br>
                         <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""> <i class="fa fa-file"></i></a> Assignments</label><br>
                         <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-comment"></i> </a>News and Announcements</label><br>
-                        
+
                     </div>
 
                     <div class="modal-footer">

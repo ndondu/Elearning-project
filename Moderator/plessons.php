@@ -100,7 +100,7 @@ include_once("../mheader.php");
                     <form action="../Includes/lesson.php" method="post" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col-lg-12">
-                                <textarea  name="id"> <?php echo $cid; ?></textarea>
+                                <textarea name="id"> <?php echo $cid; ?></textarea>
                                 <!-- 
                                     <input type="text" name="id" class="form-control" value="<?php echo $cid; ?>" >
                                 -->
