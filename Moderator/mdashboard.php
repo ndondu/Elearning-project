@@ -168,17 +168,17 @@ include_once("../mheader.php");
                                 <input type="text" name="fname" class="form-control" placeholder="" value="<?php echo $_SESSION['fname']; ?>">
                             </div>
                             <div class="col-lg-6">
-                            <label for="lname">Last name</label>
+                                <label for="lname">Last name</label>
                                 <input type="text" name="lname" class="form-control" placeholder="" value="<?php echo $_SESSION['lname']; ?>">
                             </div>
                         </div>
                         <div class="row pt-3">
                             <div class="col-lg-6">
-                            <label for="Email">Email</label>
+                                <label for="Email">Email</label>
                                 <input type="email" name="email" class="form-control" placeholder="" value="<?php echo $_SESSION['email']; ?>">
                             </div>
                             <div class="col-lg-6">
-                            <label for="pass">Password</label>
+                                <label for="pass">Password</label>
                                 <input type="password" name="password" class="form-control" placeholder="" value="<?php echo $_SESSION['password']; ?>">
                             </div>
                         </div>

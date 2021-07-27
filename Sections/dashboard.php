@@ -172,27 +172,27 @@ include_once("../header.php");
                 <form action="../Includes/edit.php" method="post">
                     <div class="modal-body">
                         <div class="row">
-                        <div class="col-lg-6">
-                        <input type="hidden" name="uid" class="form-control" placeholder="" value="<?php echo $_SESSION['user_id']; ?>">
-                            <input type="text" name="fname" class="form-control" placeholder="" value="<?php echo $_SESSION['fname']; ?>">
-                        </div>
-                        <div class="col-lg-6">
-                            <input type="text" name="lname" class="form-control" placeholder="" value="<?php echo $_SESSION['lname']; ?>">
-                        </div>
+                            <div class="col-lg-6">
+                                <input type="hidden" name="uid" class="form-control" placeholder="" value="<?php echo $_SESSION['user_id']; ?>">
+                                <input type="text" name="fname" class="form-control" placeholder="" value="<?php echo $_SESSION['fname']; ?>">
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="text" name="lname" class="form-control" placeholder="" value="<?php echo $_SESSION['lname']; ?>">
+                            </div>
                         </div>
                         <div class="row pt-3">
-                        <div class="col-lg-6">
-                            <input type="email" name="email" class="form-control" placeholder="" value="<?php echo $_SESSION['email']; ?>">
+                            <div class="col-lg-6">
+                                <input type="email" name="email" class="form-control" placeholder="" value="<?php echo $_SESSION['email']; ?>">
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="password" name="password" class="form-control" placeholder="" value="<?php echo $_SESSION['password']; ?>">
+                            </div>
                         </div>
-                        <div class="col-lg-6">
-                            <input type="password" name="password" class="form-control" placeholder="" value="<?php echo $_SESSION['password']; ?>">
-                        </div>
-                        </div>
-                      <br>
-                       
+                        <br>
+
                     </div>
                     <div class="modal-footer">
-                        
+
                         <button type="submit" name="editprofile" class="btn btn-primary">Edit</button>
                     </div>
                 </form>

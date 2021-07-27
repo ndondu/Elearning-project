@@ -33,7 +33,7 @@ include_once("../mheader.php");
     while ($row = mysqli_fetch_array($query)) {
     ?>
 
-        <div class=" col-lg-12 bg-white pt-3 ">
+        <div class=" col-lg-12 bg-white pt-3 mt-2 ">
             <form action="../Includes/edit.php" method="post">
 
 
@@ -56,17 +56,7 @@ include_once("../mheader.php");
 
                 <button class="btn btn-primary" type="submit" name="edit">Edit</button>
             </form>
-            <!-- 
-                <div class="comment-btn">
 
-                    <i></i>
-                    <a href="#">
-                        <button class="btn btn-primary">comment</button>
-                    </a>
-
-                </div>
-            </div>
-           -->
         </div>
 
 
@@ -93,17 +83,7 @@ include_once("../mheader.php");
 
 </div>
 
-<!-- <div class="pop-container">
-        <div class="pop-content">
-            <div class="close-popup" id="close">
-                <i class="fas fa-times"></i>
-            </div>
-            <div class="form-group">
-              
 
-            </div>
-        </div>
-    </div> -->
 
 <!-- Modal -->
 <div class="pop-conainer">
@@ -119,6 +99,7 @@ include_once("../mheader.php");
                 <form action="../Includes/news.php" method="post">
                     <div class="modal-body">
                         <div class="col-lg-12">
+
                             <input type="text" name="title" class="form-control" placeholder="title">
                         </div><br>
                         <div class="col-lg-12">
@@ -127,7 +108,7 @@ include_once("../mheader.php");
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" name="submit" class="btn btn-primary">Post</button>
+                        <button type="submit" name="post" class="btn btn-primary">Post</button>
                     </div>
                 </form>
             </div>

@@ -36,7 +36,7 @@ if (isset($_POST['editprofile'])) {
 }
 else{
    
-    $_SESSION['!update'] = "update failed!";
+    $_SESSION['!updateprofile'] = "update failed!";
    // header("Location: ../moderator/Pnews.php");
 }
 ?>

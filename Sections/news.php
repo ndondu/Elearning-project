@@ -9,9 +9,9 @@ include_once("../header.php");
 
 <div class="row ">
 
-    <h2>
+    <h4 class="course_name bg-light pt-5" style="width:100%; border-left:2px solid #4f7bda; border-bottom:4px solid #4f7bda; padding:1rem; ">
         News and Announcements
-    </h2><br><br>
+    </h4><br><br>
     <?php
     include "../Includes/connect.php";
     $query = mysqli_query($conn, "SELECT news.id, news.title, news.message, news.posted, news.user_id,
@@ -21,37 +21,23 @@ include_once("../header.php");
                               ");
 
     while ($row = mysqli_fetch_array($query)) {
+
     ?>
-        <div class="col-md-12 col-lg-12 bg-white ">
+
+        <div class="-lg-12 bg-white pt-1 mt-4 ">
             <div>
 
-                <p class="posted-by">
+                <p class="posted-by" style="background-color: #fff;  padding: 1rem;">
                     <span class="topic"><?php echo $row['title']; ?></span><br>
-                    Posted By: <span><?php echo $row['fname'] . " " . $row['lname'] ?> </span> on <span><?php echo $row['posted']; ?></span>
+                    Posted By: <span class="text-dark " style="font-weight: 700;"><?php echo $row['fname'] . " " . $row['lname'] ?> </span> on <span><?php echo $row['posted']; ?></span>
                 </p>
             </div>
             <p>
                 <?php echo $row['message']; ?>
             </p>
-            <!-- 
-                <div class="news-btn">
-                <div class="like-btn">
-                    <i></i>
-                    <a href="#">
-                        <button class="btn btn-primary">like</button>
-                    </a>
-                </div>
-                <div class="comment-btn">
 
-                    <i></i>
-                    <a href="#">
-                        <button class="btn btn-primary">comment</button>
-                    </a>
-
-                </div>
-            </div>
-            -->
         </div>
+        <br>
     <?php } ?>
 
 </div>

@@ -1,7 +1,6 @@
 <?php
 
 
-
 require 'connect.php';
 
 if (isset($_POST["request-submit"])) {
@@ -44,7 +43,7 @@ if (isset($_POST["request-submit"])) {
 
 
 
-   /* $to = $userEmail;
+    $to = $userEmail;
 
     $subject = 'Reset your password for moon e-learning';
 
@@ -53,50 +52,62 @@ if (isset($_POST["request-submit"])) {
     $message .= '<p>Here is your password reset link: </br>';
     $message .= '<a href="' . $url . '">' . $url . '</a> </p>';
 
-    $headers = " From: moon <ndondugrace88@gmail.com>\r\n";
-    $headers .= "Reply-To : ndondugrace88@gmail.com\r\n ";
-    $headers .= " Content-type : text/html\r\n ";
+    //  $headers = " From:  'ndondugrace88@gmail.com'\r\n";
+    //  $headers .= "Reply-To : ndondugrace88@gmail.com\r\n ";
+    //  $headers .= " Content-type : text/html\r\n ";
 
-    mail($to, $subject,  $message, $headers);*/
-
-     require_once('../PHPMailer-master/get_oauth_token.php');
-
-     try{
-
-     
-
-    $mail = new PHPMailer(true);
-    $mail->isSMTP();
-    $mail->SMTPAuth = true;
-    $mail->SMTPSecure = 'ssl';
-    $mail->Host = 'smtp.gmail.com';
-    $mail->Port = '465';
-    $mail->isHTML();
-    $mail->Username = 'testing@gmail.com';
-    $mail->Password = 'testing';
-    $mail->setFrom($headers);
-    $mail->Subject = $subject;
-    $mail->Body = $message;
-    $mail->addAddress = $to;
-
-
-    $mail->send();
-
-    echo "success";
-    exit();
-}
-catch(Exception $e){
-    echo $mail->ErrorInfo ;
-    exit();
-    
-
-}
-
-
-
-
-    header("Location: ../sections/forget.php?reset=success");
+    /* mail($to, $subject,  $message, $headers);*/
 } else {
     header("Location: ../sections/login.php");
-
 }
+
+
+
+use PHPMailer\PHPMailer\PHPMailer;
+
+require_once("../PHPMailer/PHPMailer.php");
+require_once("../PHPMailer/SMTP.php");
+require_once("../PHPMailer/Exception.php");
+
+// try {
+
+
+
+$mail = new PHPMailer();
+$mail->isSMTP();
+$mail->SMTPAuth = true;
+$mail->SMTPSecure = 'ssl';
+$mail->Host = 'smtp.gmail.com';
+$mail->Port = 465;
+$mail->isHTML(true);
+$mail->Username = 'ndondugrace88@gmail.com';
+$mail->Password = '07@@&!((&$';
+
+//$mail->setFrom($headers);
+$mail->SetFrom('ndondugrace88@gmail.com', 'moon');
+
+$mail->Subject = $subject;
+$mail->Body = $message;
+$mail->AddAddress($to);
+
+if ($mail->Send()) {
+
+    echo "email sent successfully";
+} else {
+    echo $mail->ErrorInfo;
+}
+
+
+    /*    $mail->send();
+
+        echo "success";
+        exit();
+    } catch (Exception $e) {
+        echo $mail->ErrorInfo;
+        exit();
+    }
+
+
+
+
+    header("Location: ../sections/forget.php?reset=success");*/

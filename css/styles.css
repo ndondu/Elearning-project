@@ -688,10 +688,7 @@ body {
 }
 
 /*news and announcement styles */
-.posted-by {
-  background-color: #e0f7fa;
-  padding: 1rem;
-}
+
 .topic {
   font-size: 1.2rem;
   font-weight: 600;

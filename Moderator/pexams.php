@@ -65,7 +65,33 @@ include_once("../mheader.php");
 
     </div>
 
+
+
+
+
+
+
+
+
+
+
     <div class="pop-conainer">
+
+        <?php
+
+        include '../Includes/connect.php';
+
+        $query = mysqli_query($conn, "SELECT * FROM courses");
+
+        while($row1 = mysqli_fetch_array($query)){
+
+        
+
+
+        ?>
+        <div>
+          
+        </div>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -75,29 +101,29 @@ include_once("../mheader.php");
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="../Includes/lesson.php" method="post" enctype="multipart/form-data">
+                    <form action="../Includes/addexam.php" method="post" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col-lg-12">
-                                <input type="hidden" name="title" class="form-control" placeholder="course">
+
                                 <input type="text" name="topic" class="form-control" placeholder="Exam title">
                             </div><br>
                             <div class="col-lg-12">
-                                <input type="text" name="title" class="form-control" placeholder="course">
+                                <select id="course" name="course">
+                                    <option value="<?php echo $row1['id']; ?>"><?php echo $row1['course_name']; ?></option>
+                                </select>
                             </div><br>
                             <div class="col-lg-12">
-                                <input type="text" name="title" class="form-control" placeholder="Description">
+                                <input type="text" name="decription" class="form-control" placeholder="Description">
                             </div><br>
                             <div class="col-lg-12">
-                                <input type="text" name="classroom" class="form-control" placeholder="Date time">
+                                <input type="datetime-local" name="date_time" class="form-control" placeholder="Date time">
                             </div><br>
 
                             <div class="col-lg-12">
-                                <input type="text" name="notes" class="form-control" placeholder="Exam duration">
+                                <input type="time" name="exam_duration" class="form-control" placeholder="Exam duration">
                             </div><br>
 
-                            <div class="col-lg-12">
-                                <input type="url" name="url" class="form-control" placeholder="Action">
-                            </div><br>
+
 
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -112,6 +138,7 @@ include_once("../mheader.php");
 
 
         </div>
+        <?php } ?>
 
     </div>
 

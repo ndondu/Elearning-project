@@ -17,15 +17,39 @@ include_once("../mheader.php");
 
                         </div>
                         -->
+<div class="">
 
-<div class="row">
-    <div class="col-lg-3 col-md-6 col-lg-12">
+
+    <?php
+    include "../Includes/connect.php";
+
+    $cid = $_GET['id'];
+
+    $result = mysqli_query($conn, "SELECT * FROM courses where id = '$cid' ");
+    while ($row1 =  mysqli_fetch_assoc($result)) {
+    ?>
+
+        <div class="course_name bg-light pt-5" style="width:100%; border-left:2px solid #4f7bda; border-bottom:4px solid #4f7bda; padding:1rem; ">
+            <h4><?php echo $row1['course_name']; ?> </h4>
+
+
+        </div>
+    <?php } ?>
+</div>
+
+<div class="row pt-3">
+    <div class="col-md-12 ">
         <button class=" btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="border: none; float:center;"><i class="fa fa-book"></i> &nbsp; New</button>
         <button class="course-dash btn btn-primary" data-toggle="modal" data-target="#exampleModal2" style="border: none; float:right;"> <i class="fa fa-bookmark"></i> &nbsp; Course dashboard</button>
     </div>
+    <div class="row mt-3">
+
+        <i class="fa fa-book" style="font-size:1.1rem;"> &nbsp; <a href="#">Course Announcements</a></i>
+
+    </div>
 </div>
 
-<div class="row pt-5 ">
+<div class="row pt-2 ">
     <?php
     include "../Includes/connect.php";
 
@@ -38,18 +62,14 @@ include_once("../mheader.php");
     while ($row =  mysqli_fetch_array($result)) {
     ?>
 
-        <div class="course_name bg-light pt-5" style="width:100%; border-left:2px solid #4f7bda; border-bottom:4px solid #4f7bda; padding:1rem; ">
-            <h4><?php echo $row['course_name']; ?> </h4>
 
 
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-lg-12 pt-5 bg-light" style="margin-top:2rem; " id="<?php echo $row['id']; ?>">
+        <div class="col-lg-3 col-md-6 col-lg-12 pt-2 bg-light" style="margin-top:2rem; " id="<?php echo $row['id']; ?>">
 
 
             <div class="title"">
                                         <h4><?php echo $row['topic']; ?></h4u>
-                                            <h5 class=" pt-5"><?php echo $row['title']; ?></h5>
+                                            <h5 class=" pt-3"><?php echo $row['title']; ?></h5>
                 <p class="pt-1 chapter_description" id="description">
                     <?php echo $row['description']; ?>
                 </p>
