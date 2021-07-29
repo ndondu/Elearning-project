@@ -44,7 +44,7 @@ include_once("../mheader.php");
     </div>
     <div class="row mt-3">
 
-        <i class="fa fa-book" style="font-size:1.1rem;"> &nbsp; <a href="#">Course Announcements</a></i>
+        <i class="fa fa-book" style="font-size:1.1rem;"> &nbsp; <a href="./plessonnews.php?id=<?php echo $cid ?>">Course Announcements</a></i>
 
     </div>
 </div>

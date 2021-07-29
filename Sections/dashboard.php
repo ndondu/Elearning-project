@@ -65,30 +65,56 @@ include_once("../header.php");
             $t = 0;
             if (mysqli_num_rows($result) > 0) {
 
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $t++;
-                    if ($t == 1) { ?>
-                        <div class="row courses pt-2">
-                            <div class="col-lg-4 course-container" id="<?php echo $row['course_id']; ?>">
+                if (mysqli_num_rows($result)) {
 
-                                <div class="image">
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $t++;
+                        if ($t == 1) { ?>
+                            <div class="row courses pt-2">
+                                <div class="col-lg-4 course-container" id="<?php echo $row['course_id']; ?>">
 
-                                    <figure class="snip0019">
-                                        <img src="../images/download.jpg" alt="sample11" / " class=" image-fluid">
+                                    <div class="image">
+
+                                        <figure class="snip0019">
+                                            <img src="../images/download.jpg" alt="sample11" / " class=" image-fluid">
 
 
-                                    </figure>
-                                    <div class="course-text">
-                                        <p class="para text-dark">
-                                            <a href="./lesson.php?id=<?php echo $row['cid']; ?>"> <span class="course-name "><?php echo $row['course']; ?></span></a>
-                                        </p>
+                                        </figure>
+                                        <div class="course-text">
+                                            <p class="para text-dark">
+                                                <a href="./lesson.php?id=<?php echo $row['cid']; ?>"> <span class="course-name "><?php echo $row['course']; ?></span></a>
+                                            </p>
+
+                                        </div>
 
                                     </div>
+                                </div>
+                                <!-- column 2 -->
+                            <?php } else if ($t == 3) { ?>
+                                <div class="col-lg-4 course-container" id="<?php echo $row['course_id']; ?>">
 
+                                    <div class="image">
+
+                                        <figure class="snip0019">
+                                            <img src="../images/download.jpg" alt="sample11" / " class=" image-fluid">
+
+
+                                        </figure>
+                                        <div class="course-text">
+                                            <p class="para text-dark">
+                                                <input type="hidden" name="course" value="<?php echo $row['course']; ?>">
+                                                <a href="./lesson.php?id=<?php echo $row['cid']; ?>"> <span class="course-name "><?php echo $row['course']; ?></span></a>
+
+                                            </p>
+
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
-                            <!-- column 2 -->
-                        <?php } else if ($t == 3) { ?>
+                        <?php $t = 0;
+                        } else {
+                        ?>
                             <div class="col-lg-4 course-container" id="<?php echo $row['course_id']; ?>">
 
                                 <div class="image">
@@ -109,37 +135,16 @@ include_once("../header.php");
 
                                 </div>
                             </div>
-                        </div>
-                    <?php $t = 0;
-                    } else {
-                    ?>
-                        <div class="col-lg-4 course-container" id="<?php echo $row['course_id']; ?>">
-
-                            <div class="image">
-
-                                <figure class="snip0019">
-                                    <img src="../images/download.jpg" alt="sample11" / " class=" image-fluid">
-
-
-                                </figure>
-                                <div class="course-text">
-                                    <p class="para text-dark">
-                                        <input type="hidden" name="course" value="<?php echo $row['course']; ?>">
-                                        <a href="./lesson.php?id=<?php echo $row['cid']; ?>"> <span class="course-name "><?php echo $row['course']; ?></span></a>
-
-                                    </p>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    <?php
+                        <?php
+                        }
                     }
-                }
-                if ($t < 3) {
-                    ?>
+                    if ($t < 3) {
+                        ?>
         </div>
 <?php }
+                }
+            } else {
+                echo '<div class="alert alert-danger">You are not enrolled in any courses.</div>';
             } ?>
     </div>
 </div>

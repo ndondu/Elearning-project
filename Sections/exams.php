@@ -12,6 +12,11 @@ include_once("../header.php");
 
 
 
+<?php
+
+echo '<div class="alert alert-danger mt-5">No available Exams.</div>';
+
+?>
 
 
 

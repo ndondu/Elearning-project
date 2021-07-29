@@ -20,25 +20,30 @@ include_once("../header.php");
                               inner join news on  news.user_id = users_table.id order by news.id desc
                               ");
 
-    while ($row = mysqli_fetch_array($query)) {
+    if (mysqli_num_rows($query)) {
+
+        while ($row = mysqli_fetch_array($query)) {
 
     ?>
 
-        <div class="-lg-12 bg-white pt-1 mt-4 ">
-            <div>
+            <div class="col-lg-12 bg-white pt-1 mt-4 ">
 
-                <p class="posted-by" style="background-color: #fff;  padding: 1rem;">
+
+                <p class="posted-by" style="background-color: #fff;  padding-top: 1rem;">
                     <span class="topic"><?php echo $row['title']; ?></span><br>
-                    Posted By: <span class="text-dark " style="font-weight: 700;"><?php echo $row['fname'] . " " . $row['lname'] ?> </span> on <span><?php echo $row['posted']; ?></span>
+                    Posted By: <span class="text-dark " style="font-weight: 600;"><?php echo $row['fname'] . " " . $row['lname'] ?> </span> on <span><?php echo $row['posted']; ?></span>
                 </p>
-            </div>
-            <p>
-                <?php echo $row['message']; ?>
-            </p>
 
-        </div>
-        <br>
-    <?php } ?>
+                <p>
+                    <?php echo $row['message']; ?>
+                </p>
+
+            </div>
+            <br>
+    <?php }
+    } else {
+        echo '<div class="alert alert-danger">There is no news posted</div>';
+    } ?>
 
 </div>
 </div>

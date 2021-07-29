@@ -30,40 +30,46 @@ include_once("../mheader.php");
                                      inner join news on  news.user_id = users_table.id order by news.id desc
                                      ");
 
-    while ($row = mysqli_fetch_array($query)) {
+    if (mysqli_num_rows($query)) {
+
+
+        while ($row = mysqli_fetch_array($query)) {
     ?>
 
-        <div class=" col-lg-12 bg-white pt-3 mt-2 ">
-            <form action="../Includes/edit.php" method="post">
+            <div class=" col-lg-12 bg-white pt-3 mt-2 ">
+                <form action="../Includes/edit.php" method="post">
 
 
-                <div>
+                    <div>
 
 
 
-                    <p class="posted-by">
-                        <input type="hidden" name="eid" value="<?php echo $row['id']; ?>">
-                        <input type="text" name="title" value="<?php echo $row['title']; ?>" style="width:500px;"><br>
+                        <p class="posted-by">
+                            <input type="hidden" name="eid" value="<?php echo $row['id']; ?>">
+                            <input type="text" name="title" value="<?php echo $row['title']; ?>" style="width:500px;"><br>
 
-                        Posted By: <span><?php echo $row['fname'] . " " . $row['lname']  ?></span> on <span><?php echo $row['posted'] ?></span>
+                            Posted By: <span><?php echo $row['fname'] . " " . $row['lname']  ?></span> on <span><?php echo $row['posted'] ?></span>
+                        </p>
+                    </div>
+
+                    <p>
+
+                        <textarea type="text" name="message" cols="100" rows="5"><?php echo $row['message'] ?></textarea>
                     </p>
-                </div>
 
-                <p>
+                    <button class="btn btn-primary" type="submit" name="edit">Edit</button>
+                </form>
 
-                    <textarea type="text" name="message" cols="100" rows="5"><?php echo $row['message'] ?></textarea>
-                </p>
-
-                <button class="btn btn-primary" type="submit" name="edit">Edit</button>
-            </form>
-
-        </div>
+            </div>
 
 
 
 
 
-    <?php } ?>
+    <?php }
+    } else {
+        echo '<div class="alert alert-success" style="font: size 1.2rem;">There is no news posted</div>';
+    } ?>
 </div>
 </div>
 

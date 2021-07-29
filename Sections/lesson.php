@@ -55,7 +55,7 @@ include_once("../header.php");
 
 <div class="row mt-3">
 
-<i class="fa fa-book" style="font-size:1.1rem;"> &nbsp; <a href="#">Course Announcements</a></i>
+    <i class="fa fa-book" style="font-size:1.1rem;"> &nbsp; <a href="./coursenews.php?id=<?php echo $cid ?>">Course Announcements</a></i>
 
 </div>
 
