@@ -168,9 +168,9 @@ include_once("../mheader.php");
 
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="modal-body">
-                            <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-th"></i> </a>Attendance </label><br>
-                            <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-globe"></i></a>Announcements</label><br>
-                            <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""> <i class="fa fa-file"></i></a> Assignment</label><br>
+
+                            <a href="./plessonnews.php?id=<?php echo $cid ?>"><i class="fa fa-globe"></i>&nbsp; Announcements</a> <br>
+                            <a href="./quiz.php?id=<?php echo $cid ?>" class="mt-4"> <i class="fa fa-file"></i>&nbsp; Quizzes</a><br>
 
                         </div>
 

@@ -73,18 +73,17 @@ session_start();
                                     <input type="text" class="form-control" name="lname" id="exampleInputName">
                                 </div>
                             </div>
-                            <label for="dob">DoB</label>
-                            <input type="date" class="form-control" name="dob" id="exampleInputName">
+                           
 
 
 
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
 
                                     <label for="email">Email address</label>
                                     <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <label for="exampleInputPassword1">Password</label>
                                     <input type="password" class="form-control" name="password" id="exampleInputPassword1">
                                 </div>
@@ -100,7 +99,7 @@ session_start();
 
                             -->
                             <button type="submit" class="btn  button-primary  mt-2" name="submit">Sign up</button>
-                            <p class="mt-1" style="font-size: 0.8rem;">Already have an account <a href="login.php">login</a></p>
+                            <p class="mt-4" style="font-size: 1rem;">Already have an account <a href="login.php">login</a></p>
                         </form>
                     </div>
 

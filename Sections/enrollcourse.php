@@ -3,16 +3,7 @@
 include_once("../header.php");
 
 ?>
-<div class=" moon-logo container  ">
 
-    <div class="row header">
-        <img src="../images/university-avatar-education-icon-vector-1979314(1).jpg" alt="">
-        <div class="header-title pt-5">
-            <p class=" logo-text text-uppercase text-primary ">moon elearning school</p>
-        </div>
-    </div>
-
-</div>
 
 
 </div>
@@ -42,8 +33,10 @@ include_once("../header.php");
 
 
         $s = "SELECT id, course_name, tutor FROM courses
+                           /**
                             UNION 
                             SELECT course, course_id, user_id FROM my_courses
+                            */
                             ORDER BY id";
 
 
@@ -83,7 +76,7 @@ include_once("../header.php");
                                         <input type="hidden" name="course" value="<?php echo $row['course_name']; ?>">
                                         <span class="course-name "><?php echo $row['course_name']; ?></span> <br>
                                         <span class="tutor">Tutor:</span> <?php echo $row['tutor']; ?> <br>
-                                        <span class="enrolled">Students:</span> <span class="bg-light  num">45</span>
+                                        
                                     </p>
 
                                 </div>
@@ -119,7 +112,7 @@ include_once("../header.php");
                                         <input type="hidden" name="course" value="<?php echo $row['course_name']; ?>">
                                         <span class="course-name "><?php echo $row['course_name']; ?></span> <br>
                                         <span class="tutor">Tutor:</span> <?php echo $row['tutor']; ?> <br>
-                                        <span class="enrolled">Students:</span> <span class="bg-light  num">45</span>
+           
                                     </p>
 
                                 </div>
@@ -159,7 +152,7 @@ include_once("../header.php");
                                     <input type="hidden" name="course" value="<?php echo $row['course_name']; ?>">
                                     <span class="course-name "><?php echo $row['course_name']; ?></span> <br>
                                     <span class="tutor">Tutor:</span> <?php echo $row['tutor']; ?> <br>
-                                    <span class="enrolled">Students:</span> <span class="bg-light  num">45</span>
+                                    
                                 </p>
 
                             </div>

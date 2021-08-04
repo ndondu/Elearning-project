@@ -2,6 +2,7 @@
 session_start();
 
 
+/** eNROLLING COURSES */
 
 if (isset($_POST['enroll'])) {
 
@@ -26,10 +27,43 @@ if (isset($_POST['enroll'])) {
     $insert = "INSERT INTO my_courses(course, course_id, user_id) VALUES('$course', '$course_id','$user_id  ')";
     $result = mysqli_query($conn, $insert);
     if ($result) {
-        $_SESSION['msg'] = "Enroll Successfully !!";
+        $_SESSION['msg'] = "Enrolled Successfully !!";
         header("location:../sections/dashboard.php");
     } else {
         $_SESSION['msg'] = "course enroll failed !!";
         header("location:../sections/enrollcourse.php");
     }
+}
+
+
+/** ADD QUIZZES */
+
+if (isset($_POST['addquiz'])) {
+
+    include_once('./connect.php');
+
+    $course_id = $_POST['course_id'];
+    $quiz_title = $_POST['quiztitle'];
+    $quiz_time = $_POST['quiztime'];
+
+    $sql1 = mysqli_query($conn, "INSERT INTO quiz(course_id, quiz_title, quiz_time) VALUES('$course_id',' $quiz_title', '$quiz_time')");
+    $_SESSION['quizadd'] = "Quiz Added Successfully !!";
+
+
+    header("Location: ../moderator/quiz.php?id=$course_id");
+}
+
+
+/** DELETE QUIZ */
+
+if (isset($_POST['deletequiz'])) {
+
+    include_once('./connect.php');
+
+    $course_id = $_POST['course_id'];
+    $id = $_POST['quizid'];
+
+    $sql = mysqli_query($conn, "DELETE FROM `quiz` WHERE id = $id");
+
+    header("Location: ../moderator/quiz.php?id=$course_id");
 }

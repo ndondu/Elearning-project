@@ -34,28 +34,29 @@ include_once("../mheader.php");
     if (mysqli_num_rows($query)) {
 
 
-    while ($row = mysqli_fetch_array($query)) {
+        while ($row = mysqli_fetch_array($query)) {
     ?>
 
-        <div class=" col-lg-12 mt-5 ">
-            <div class="container">
+            <div class=" col-lg-12 mt-5 ">
+                <div class="container">
 
-                <div class="card">
-                    <div class="card-header">
-                        <p> <span style="font-size: 1.2rem; font-weight: 600;"> <?php echo $row['title'] ?></span> <br>
-                            Posted By: <span class="text-dark " style="font-weight: 600;"> <?php echo $row['fname'] . " " . $row['lname']  ?></span></span> on <span><?php echo $row['posted']; ?></span></p>
-                    </div>
-                    <div class="card-body">
-                        <p><?php echo $row['message'] ?></p>
-                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <p> <span style="font-size: 1.2rem; font-weight: 600;"> <?php echo $row['title'] ?></span> <br>
+                                Posted By: <span class="text-dark " style="font-weight: 600;"> <?php echo $row['fname'] . " " . $row['lname']  ?></span></span> on <span><?php echo $row['posted']; ?></span></p>
+                        </div>
+                        <div class="card-body">
+                            <p><?php echo $row['message'] ?></p>
+                        </div>
 
+                    </div>
                 </div>
             </div>
-        </div>
 
     <?php }
-     } else {
-     echo '<div class="alert alert-danger mt-5 " style="font: size 1.2rem;">No announcement posted, click on new announcement to post</div>'; }
+    } else {
+        echo '<div class="alert alert-danger mt-5 " style="font: size 1.2rem;">No announcement posted, click on new announcement to post</div>';
+    }
     ?>
 </div>
 </div>

@@ -144,7 +144,7 @@ include_once("../header.php");
 <?php }
                 }
             } else {
-                echo '<div class="alert alert-danger">You are not enrolled in any courses.</div>';
+                echo '<div class="alert alert-danger">You are not enrolled to any courses.</div>';
             } ?>
     </div>
 </div>

@@ -26,18 +26,20 @@ include_once("../header.php");
 
     ?>
 
-            <div class="col-lg-12 bg-white pt-1 mt-4 ">
+            <div class=" col-lg-12 mt-5 ">
+                <div class="container">
 
+                    <div class="card">
+                        <div class="card-header">
+                            <p> <span style="font-size: 1.2rem; font-weight: 600;"> <?php echo $row['title'] ?></span> <br>
+                                Posted By: <span class="text-dark " style="font-weight: 600;"> <?php echo $row['fname'] . " " . $row['lname']  ?></span></span> on <span><?php echo $row['posted']; ?></span></p>
+                        </div>
+                        <div class="card-body">
+                            <p><?php echo $row['message'] ?></p>
+                        </div>
 
-                <p class="posted-by" style="background-color: #fff;  padding-top: 1rem;">
-                    <span class="topic"><?php echo $row['title']; ?></span><br>
-                    Posted By: <span class="text-dark " style="font-weight: 600;"><?php echo $row['fname'] . " " . $row['lname'] ?> </span> on <span><?php echo $row['posted']; ?></span>
-                </p>
-
-                <p>
-                    <?php echo $row['message']; ?>
-                </p>
-
+                    </div>
+                </div>
             </div>
             <br>
     <?php }

@@ -149,14 +149,14 @@ include_once("../header.php");
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
                         <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-th"></i> </a>Attendance </label><br>
-                        <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""> <i class="fa fa-file"></i></a> Assignments</label><br>
-                        <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href=""><i class="fa fa-comment"></i> </a>News and Announcements</label><br>
+                        <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href="../Includes/testing.php?id=<?php echo $cid ?>"> <i class="fa fa-file"></i>Assignments </a> </label><br>
+                        <input type="radio" name="" id="" value="">&nbsp;&nbsp;<label for=""><a href="./coursenews.php?id=<?php echo $cid ?>"><i class="fa fa-comment"></i> News and Announcements </a></label><br>
 
                     </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" name="submit" class="btn btn-primary">Add</button>
+
                     </div>
                 </form>
             </div>

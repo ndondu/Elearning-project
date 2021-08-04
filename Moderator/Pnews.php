@@ -18,9 +18,15 @@ include_once("../mheader.php");
     </div>
    -->
 
+
+
 </div>
 
-<div class=" row pt-5">
+<div class=" row ">
+
+    <h4 class="course_name bg-light pt-5" style="width:100%; border-left:2px solid #4f7bda; border-bottom:4px solid #4f7bda; padding:1rem; ">
+        News and Announcements
+    </h4><br><br>
 
     <?php
     include "../Includes/connect.php";
@@ -36,7 +42,7 @@ include_once("../mheader.php");
         while ($row = mysqli_fetch_array($query)) {
     ?>
 
-            <div class=" col-lg-12 bg-white pt-3 mt-2 ">
+            <div class=" col-lg-12 bg-white mt-5 ">
                 <form action="../Includes/edit.php" method="post">
 
 
