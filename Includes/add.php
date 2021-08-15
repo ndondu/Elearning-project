@@ -57,6 +57,23 @@ if (isset($_POST['addlesson'])) {
     if (move_uploaded_file($_FILES['notes']['tmp_name'], $target_dir));
 }
 
+/**
+ * DELETE LESSON
+ */
+
+if (isset($_POST['deletelesson'])) {
+
+    include_once('./connect.php');
+
+    $cid = $_POST['courseid'];
+    $lid = $_POST['lessonid'];
+
+    $sql = mysqli_query($conn, "DELETE FROM `lesson` WHERE id = $lid");
+
+    header("Location: ../moderator/plessons.php?id=  $cid");
+}
+
+ 
 
 /** ADD QUIZZES */
 

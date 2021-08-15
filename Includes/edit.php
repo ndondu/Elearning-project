@@ -2,7 +2,7 @@
 
 session_start();
 
-
+/**EDIT NEWS AND ANNOUNCEMENTS */
 
 if(isset($_POST['edit'])){
 
@@ -20,7 +20,7 @@ if(isset($_POST['edit'])){
     $_SESSION['!updatenews'] = "Failed to update news. Try again.!";
 }
 
-
+/** EDIT USER PROFILE */
 
 
 if (isset($_POST['editprofile'])) {
@@ -42,4 +42,7 @@ else{
     $_SESSION['!updateprofile'] = "update failed!";
    // header("Location: ../moderator/Pnews.php");
 }
-?>
+ 
+/** EDIT LESSONS */
+
+
