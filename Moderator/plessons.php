@@ -29,7 +29,7 @@ include_once("../mheader.php");
     while ($row1 =  mysqli_fetch_assoc($result)) {
     ?>
 
-        <div class="course_name bg-light pt-5" style="width:100%; border-left:2px solid #4f7bda; border-bottom:4px solid #4f7bda; padding:1rem; ">
+        <div class="course_name bg-light pt-4" style="width:100%; border-left:2px solid #4f7bda; border-bottom:4px solid #4f7bda; padding:1rem; ">
             <h4><?php echo $row1['course_name']; ?> </h4>
 
 
@@ -42,11 +42,13 @@ include_once("../mheader.php");
         <button class=" btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="border: none; float:center;"><i class="fa fa-book"></i> &nbsp; New</button>
         <button class="course-dash btn btn-primary" data-toggle="modal" data-target="#exampleModal2" style="border: none; float:right;"> <i class="fa fa-bookmark"></i> &nbsp; Course dashboard</button>
     </div>
-    <div class="row mt-3">
+   <!-- 
+        <div class="row mt-3">
 
         <i class="fa fa-book" style="font-size:1.1rem;"> &nbsp; <a href="./plessonnews.php?id=<?php echo $cid ?>">Course Announcements</a></i>
 
     </div>
+    -->
 </div>
 
 <div class="row pt-2 ">
@@ -85,7 +87,7 @@ include_once("../mheader.php");
                         <li class="pt-3">
                             <i class="fa fa-video"></i> &nbsp; Classroom <br>
                             <div class="pt-1">
-                                <p><?php echo $row['classroom']; ?></p>
+                                <p>Password:&nbsp;<?php echo $row['classroom']; ?></p>
                                 <span> <a href="<?php echo $row['url']; ?>">join meeting</a></span>
 
                             </div>
@@ -117,7 +119,7 @@ include_once("../mheader.php");
 
 
 
-                    <form action="../Includes/lesson.php" method="post" enctype="multipart/form-data">
+                    <form action="../Includes/add.php" method="post" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="col-lg-12">
                                 <textarea name="id"> <?php echo $cid; ?></textarea>
@@ -148,7 +150,7 @@ include_once("../mheader.php");
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="submit" name="submit" class="btn btn-primary">Post</button>
+                            <button type="submit" name="addlesson" class="btn btn-primary">Add Lesson</button>
                         </div>
                     </form>
 

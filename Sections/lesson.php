@@ -8,22 +8,6 @@ include_once("../header.php");
 <!--PAGE CONTENT -->
 
 
-<!-- 
-    <div class=" moon-logo container  ">
-
-    <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <img src="../images/university-avatar-education-icon-vector-1979314(1).jpg" alt="">
-
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 pt-5" style="margin-left: -5rem;">
-            <p class=" logo-text text-uppercase text-primary ">Moon Academy</p>
-        </div>
-    </div>
-
-</div>
- -->
-
 <div class="mt-2">
 
 

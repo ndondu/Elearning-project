@@ -78,32 +78,33 @@ include_once("../mheader.php");
                         
                         ");
 
-                        if(mysqli_num_rows($res)){
+                            if (mysqli_num_rows($res)) {
 
-                            while ($row = mysqli_fetch_assoc($res)) {
+                                while ($row = mysqli_fetch_assoc($res)) {
 
                             ?>
 
-                                <tr>
-                                    <td> <?php echo $row['qid']; ?></td>
-                                    <td> <?php echo $row['quiz_title']; ?></td>
-                                    <td> <?php echo $row['quiz_time']; ?></td>
-                                    <td> <button type="submit" name="editquiz" class="btn btn-primary">Edit</button></td>
-                                    <td> 
-                                        <input type="hidden" name="quizid" value="<?php echo $row['qid']; ?>">
-                                        <button type="submit" name="deletequiz" class="btn btn-danger">Delete</button>
-                                    </td>
+                                    <tr>
+                                        <td> <?php echo $row['qid']; ?></td>
+                                        <td> <?php echo $row['quiz_title']; ?></td>
+                                        <td> <?php echo $row['quiz_time']; ?></td>
+                                        <td> <button type="submit" name="editquiz" class="btn btn-primary">Edit</button></td>
+                                        <td>
+                                            <input type="hidden" name="quizid" value="<?php echo $row['qid']; ?>">
+                                            <button type="submit" name="deletequiz" class="btn btn-danger">Delete</button>
+                                        </td>
 
-                                </tr>
+                                    </tr>
 
 
                         </tbody>
-                    <?php
+                <?php
 
-                     } } else {
-                        echo '<div class="alert alert-danger mt-5 " style="font: size 1.2rem;">No Quizzes Posted</div>';
-                    }
-                    ?>
+                                }
+                            } else {
+                                echo '<div class="alert alert-danger mt-5 " style="font: size 1.2rem;">No Quizzes Posted</div>';
+                            }
+                ?>
                     </table>
                 </div>
             </div>
@@ -113,5 +114,5 @@ include_once("../mheader.php");
 </div>
 
 <script>
-   /* window.location.href = "quiz.php?id=<?php echo $cid?>";*/
+    /* window.location.href = "quiz.php?id=<?php echo $cid ?>";*/
 </script>

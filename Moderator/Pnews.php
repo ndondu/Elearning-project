@@ -6,17 +6,7 @@ include_once("../mheader.php");
 <div class=" container  ">
     <font class="text-success"><?php echo htmlentities($_SESSION['!updatenews']); ?><?php echo htmlentities($_SESSION['!updatenews'] = ""); ?></font>
 
-    <!-- 
-        <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <img src="../images/university-avatar-education-icon-vector-1979314(1).jpg" alt="">
-
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 pt-5" style="margin-left: -5rem;">
-            <p class=" logo-text text-uppercase text-primary ">Moon Academy</p>
-        </div>
-    </div>
-   -->
+    
 
 
 

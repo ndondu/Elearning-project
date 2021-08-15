@@ -15,11 +15,14 @@ if(isset($_POST['edit'])){
     mysqli_query($conn, "UPDATE news SET title = '$title', message = '$message' where id = ' $news_id' ");
     header('location:../moderator/Pnews.php');
     $_SESSION['!updatenews'] = "News updated successfully!";
-  
 
-
-
+}else{
+    $_SESSION['!updatenews'] = "Failed to update news. Try again.!";
 }
+
+
+
+
 if (isset($_POST['editprofile'])) {
 
     include './connect.php' ;
