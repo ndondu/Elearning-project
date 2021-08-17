@@ -88,7 +88,7 @@ include_once("../mheader.php");
                                         <td> <?php echo $row['qid']; ?></td>
                                         <td> <?php echo $row['quiz_title']; ?></td>
                                         <td> <?php echo $row['quiz_time']; ?></td>
-                                        <td> <button type="submit" name="editquiz" class="btn btn-primary">Edit</button></td>
+                                        <td> <a href="./managequiz.php?id=<?php echo $row['qid']; ?>"><button type="button" name="" class="btn btn-primary">Edit</button></a></td>
                                         <td>
                                             <input type="hidden" name="quizid" value="<?php echo $row['qid']; ?>">
                                             <button type="submit" name="deletequiz" class="btn btn-danger">Delete</button>

@@ -73,7 +73,7 @@ if (isset($_POST['deletelesson'])) {
     header("Location: ../moderator/plessons.php?id=  $cid");
 }
 
- 
+
 
 /** ADD QUIZZES */
 
@@ -91,6 +91,7 @@ if (isset($_POST['addquiz'])) {
 
     header("Location: ../moderator/quiz.php?id=$course_id");
 }
+
 
 
 /** DELETE QUIZ */
