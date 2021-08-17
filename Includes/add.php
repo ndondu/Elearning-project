@@ -12,6 +12,7 @@ if (isset($_POST['enroll'])) {
     $course = $_POST['course'];
     $course_id = $_POST['course_id'];
     $user_id = $_SESSION['user_id'];
+    $_SESSION["is_staff"] = $row["is_staff"];
 
     $s = "SELECT * FROM my_courses where course_id = $course_id and user_id = $user_id";
     $result = mysqli_query($conn, $s);
@@ -27,11 +28,14 @@ if (isset($_POST['enroll'])) {
     $insert = "INSERT INTO my_courses(course, course_id, user_id) VALUES('$course', '$course_id','$user_id  ')";
     $result = mysqli_query($conn, $insert);
     if ($result) {
+
+        $row["is_staff"] == 1 ?
+        
+        header('location:../moderator/mdashboard.php') : header('location:../sections/dashboard.php');
         $_SESSION['msg'] = "Enrolled Successfully !!";
-        header("location:../sections/dashboard.php");
     } else {
         $_SESSION['msg'] = "course enroll failed !!";
-        header("location:../sections/enrollcourse.php");
+        header("location:../c/penrollcourse.php");
     }
 }
 

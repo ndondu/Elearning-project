@@ -39,7 +39,8 @@ include_once("../mheader.php");
 
 <div class="row pt-3">
     <div class="col-md-12 ">
-        <button class=" btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="border: none; float:center;"><i class="fa fa-book"></i> &nbsp; New</button>
+        <button class=" btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" style=" float:center;"><i class="fa fa-book"></i> &nbsp; New</button>
+        <button class=" btn  btn-outline-primary" data-toggle="modal" data-target="#exampleModal3" > Edit </button>
         <button class="course-dash btn btn-primary" data-toggle="modal" data-target="#exampleModal2" style="border: none; float:right;"> <i class="fa fa-bookmark"></i> &nbsp; Course dashboard</button>
     </div>
     <!-- 
@@ -99,7 +100,10 @@ include_once("../mheader.php");
                 <input type="hidden" name="lessonid" value="<?php echo $row['lid']; ?> ">
                 <input type="hidden" name="courseid" value="<?php echo $row['cid']; ?> ">
                 <button type="submit" name="deletelesson" class="btn btn-danger ">Delete</button>
-                <button type="submit" name="editlesson" class="btn btn-primary ">Edit</button>
+              
+               <!-- 
+                    <button type="submit" name="editlesson" class="btn btn-primary ">Edit</button>
+                -->
 
         </form>
 
@@ -165,6 +169,71 @@ include_once("../mheader.php");
             </div>
         </div>
     </div>
+
+
+    <div class="modal light bd-example-modal-lg" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" id="exampleModalLabel">Edit Lesson</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <?php
+    include "../Includes/connect.php";
+
+    $cid = $_GET['id'];
+
+    $result = mysqli_query($conn, "SELECT lesson.id as lid, lesson.course_id,lesson.topic, lesson.title, lesson.description, lesson.notes, lesson.classroom, lesson.url, 
+                             courses.id as cid , courses.course_name 
+                             from courses 
+                             inner join lesson on lesson.course_id = courses.id where courses.id =  '$cid'  ");
+    while ($row =  mysqli_fetch_array($result)) {
+    ?>
+
+                <form action="../Includes/edit.php" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="col-lg-12">
+                          <!--   <textarea name="id"> <?php echo $cid; ?></textarea> -->
+                            
+                                    <input type="hidden" name="id" class="form-control" value="<?php echo $cid; ?>" >
+                                
+                        </div><br>
+                        <div class="col-lg-12">
+                            <input type="text" name="topic" class="form-control" value="<?php echo $row['topic']; ?>">
+                        </div><br>
+                        <div class="col-lg-12">
+                            <input type="text" name="title" class="form-control"  value="<?php echo $row['title']; ?>">
+                        </div><br>
+                        <div class="col-lg-12">
+                            <textarea name="description" cols="20" rows="5" type="text" class="form-control" value=" "><?php echo $row['description']; ?></textarea>
+                        </div><br>
+
+                        <div class="col-lg-12">
+                            <input type="file" name="notes" class="form-control"  value="<?php echo $row['notes']; ?>">
+                        </div><br>
+                        <div class="col-lg-12">
+                            <input type="text" name="classroom" class="form-control"  value="<?php echo $row['classroom']; ?>">
+                        </div><br>
+                        <div class="col-lg-12">
+                            <input type="url" name="url" class="form-control"  value="<?php echo $row['url']; ?>">
+                        </div><br>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" name="editlesson" class="btn btn-primary">Update Lesson</button>
+                    </div>
+                </form>
+
+<?php } ?>
+            </div>
+        </div>
+    </div>
+
+
     <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -236,7 +305,8 @@ include_once("../mheader.php");
 
 <!-- dashboard navbar jquery -->
 <script src="../js/main.js"></script>
-
+<!-- 
+    
 <script>
     $('#exampleModal').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
@@ -248,6 +318,7 @@ include_once("../mheader.php");
         modal.find('.modal-body input').val(recipient)
     })
 </script>
+ -->
 </body>
 
 </html>

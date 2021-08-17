@@ -37,12 +37,3 @@ if (count($_POST) > 0) {
     header('Location:../sections/login.php');
   }
 }
-
-
-
-?>
-
-
-
-
-

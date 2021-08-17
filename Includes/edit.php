@@ -40,6 +40,9 @@ if (isset($_POST['editprofile'])) {
     // header("Location: ../moderator/Pnews.php");
 }
 
+/** EDIT LESSON*/
+
+
 
 /** EDIT QUIZ */
 

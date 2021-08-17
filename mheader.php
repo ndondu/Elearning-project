@@ -132,7 +132,7 @@ if (!isset($_SESSION['email'])) {
                                 </li>
                                  -->
                                 <li class="">
-                                    <a href="../Sections/enrollcourse.php">
+                                    <a href="../moderator/penrollcourse.php">
                                         <i class="fa fa-chart-line"></i>
                                         <span>All Courses</span>
                                     </a>
