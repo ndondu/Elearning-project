@@ -18,9 +18,89 @@ include_once("../mheader.php");
                         </div>
                         -->
 
-<div class="row">
-    <div class="col-lg-3 col-md-6 col-lg-12">
-        <button class=" btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="border: none; float:center;"><i class="fa fa-book"></i> &nbsp; New</button>
+<div class="row d-flex justify-content-between">
+    <!-- Button trigger modal -->
+    <div class="col-lg-3">
+        <div class="d-flex justify-content-between">
+            <div class="col-lg-4">
+                <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Add Exam
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <form action="../Includes/addexam.php" method="post">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Exam</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Exam Time Limit</label>
+                            <select class="form-control" name="timeLimit" required="">
+                            <option value="0">Select time</option>
+                            <option value="10">10 Minutes</option> 
+                            <option value="20">20 Minutes</option> 
+                            <option value="30">30 Minutes</option> 
+                            <option value="40">40 Minutes</option> 
+                            <option value="50">50 Minutes</option> 
+                            <option value="60">60 Minutes</option> 
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Course ID</label>
+                            <input type="number" name="id" id="" class="form-control" value="<?php if(isset($_GET['id'])){
+                                $id =$_GET['id'];
+                                echo $id;
+                            }?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Question Limit to Display</label>
+                            <input type="number" name="examQuestDipLimit" id="" class="form-control" placeholder="Input question limit to display">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Exam Title</label>
+                            <input type="" name="examTitle" class="form-control" placeholder="Input Exam Title" required="">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Exam Description</label>
+                            <textarea name="examDesc" class="form-control" rows="4" placeholder="Input Exam Description" required=""></textarea>
+                        </div>
+
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" name="submit">Add Now</button>
+                    </div>
+                    </div>
+        </form>
+              
+
+
+    </div>
+  </div>
+</div>
+            </div>
+            <div class="col-lg-4">
+                <button class=" btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="border: none; float:center;"><i class="fa fa-book"></i> &nbsp; New</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">       
         <button class="course-dash btn btn-primary" data-toggle="modal" data-target="#exampleModal2" style="border: none; float:right;"> <i class="fa fa-bookmark"></i> &nbsp; Course dashboard</button>
     </div>
 </div>

@@ -119,7 +119,7 @@ include_once("../mheader.php");
                 <form action="../Includes/news.php" method="post">
                     <div class="modal-body">
                         <div class="col-lg-12">
-                            <input type="text" name="title" class="form-control" placeholder="title">
+                            <input type="text" name="title" class="form-control" placeholder="tit">
                         </div><br>
                         <div class="col-lg-12">
                             <textarea name="message" cols="20" rows="5" type="text" class="form-control" placeholder="message"></textarea>
